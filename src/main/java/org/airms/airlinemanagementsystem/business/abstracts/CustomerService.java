@@ -1,7 +1,7 @@
 package org.airms.airlinemanagementsystem.business.abstracts;
 
 
-import org.airms.airlinemanagementsystem.entities.concrete.Customer;
+import org.airms.airlinemanagementsystem.entities.concretes.Customer;
 
 import java.util.List;
 

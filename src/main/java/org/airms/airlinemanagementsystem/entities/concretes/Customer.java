@@ -1,4 +1,4 @@
-package org.airms.airlinemanagementsystem.entities.concrete;
+package org.airms.airlinemanagementsystem.entities.concretes;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

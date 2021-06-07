@@ -1,8 +1,8 @@
-package org.airms.airlinemanagementsystem.business.concrete;
+package org.airms.airlinemanagementsystem.business.concretes;
 
 import org.airms.airlinemanagementsystem.business.abstracts.CustomerService;
 import org.airms.airlinemanagementsystem.dataAccess.CustomerDao;
-import org.airms.airlinemanagementsystem.entities.concrete.Customer;
+import org.airms.airlinemanagementsystem.entities.concretes.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
