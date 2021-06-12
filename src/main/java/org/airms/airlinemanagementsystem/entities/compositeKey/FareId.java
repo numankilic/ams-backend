@@ -1,7 +1,9 @@
 package org.airms.airlinemanagementsystem.entities.compositeKey;
 
-import java.io.Serializable;
+import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+@EqualsAndHashCode
 public class FareId implements Serializable {
     private String flightNumber;
     private String fareCode;

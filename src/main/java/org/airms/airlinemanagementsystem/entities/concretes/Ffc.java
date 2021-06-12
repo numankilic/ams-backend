@@ -7,13 +7,14 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "ffc")
-public class Ffc {
+public class Ffc{
     private String passportNumber;
     @Id
     private String ffcId;

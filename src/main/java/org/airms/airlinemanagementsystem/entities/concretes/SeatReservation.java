@@ -5,10 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.airms.airlinemanagementsystem.entities.compositeKey.SeatReservationId;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 @Data
 @AllArgsConstructor
@@ -27,4 +24,8 @@ public class SeatReservation {
     @Id
     private int seatNumber;
     private String passportNumber;
+
+
+
+
 }

@@ -4,10 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -30,4 +28,7 @@ public class Customer {
     @Column(name = "passport_number")
     @Id
     private String passportNumber;
+
+    @OneToMany(mappedBy = "passportNumber")
+    private List<SeatReservation> seatReservations;
 }

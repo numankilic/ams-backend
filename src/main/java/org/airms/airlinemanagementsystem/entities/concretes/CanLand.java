@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.airms.airlinemanagementsystem.entities.compositeKey.CanLandId;
 
 import javax.persistence.*;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,4 +20,11 @@ public class CanLand {
     @Id
     @Column(name = "airport_code")
     private String airportCode;
+
+
+
+
+
+
+
 }

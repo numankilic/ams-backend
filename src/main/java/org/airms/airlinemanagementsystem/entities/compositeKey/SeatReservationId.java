@@ -1,8 +1,10 @@
 package org.airms.airlinemanagementsystem.entities.compositeKey;
 
+import lombok.EqualsAndHashCode;
+
 import java.io.Serializable;
 import java.time.LocalDate;
-
+@EqualsAndHashCode
 public class SeatReservationId implements Serializable {
     private String flightNumber;
     private String legNumber;

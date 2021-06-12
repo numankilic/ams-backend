@@ -4,10 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
+import java.util.Map;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,4 +23,18 @@ public class Airport {
     private String city;
     @Column(name = "state")
     private String state;
+
+    @OneToMany(mappedBy = "arrAirportCode")
+    private List<LegInstance> arriveLegInstances;
+
+    @OneToMany(mappedBy = "depAirportCode")
+    private List<LegInstance> departLegInstances;
+
+    @OneToMany(mappedBy = "arrAirportCode")
+    private List<FlightLeg> arriveFlightLegs;
+
+    @OneToMany(mappedBy = "depAirportCode")
+    private List<FlightLeg> departFlightLegs;
+
+
 }

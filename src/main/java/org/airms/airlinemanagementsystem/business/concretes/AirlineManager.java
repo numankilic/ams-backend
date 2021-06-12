@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class AirlineManager implements AirlineService {
 
@@ -20,5 +22,12 @@ public class AirlineManager implements AirlineService {
     @Override
     public List<Airline> getAll() {
         return airlineDao.findAll();
+    }
+
+
+
+    @Override
+    public Optional<Airline> getById(String id) {
+        return airlineDao.findById(id);
     }
 }

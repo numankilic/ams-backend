@@ -4,10 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "flight")
@@ -24,5 +22,11 @@ public class Flight {
 
     @Column(name = "weekdays")
     private String weekDays;
+
+    @OneToMany(mappedBy = "flightNumber")
+    List<Fare> fares;
+
+    @OneToMany(mappedBy = "flightNumber")
+    private List<FlightLeg> flightLegs;
 
 }

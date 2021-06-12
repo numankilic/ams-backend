@@ -4,11 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -32,5 +30,9 @@ public class FlightLeg {
     private LocalTime scheduledArrTime;
     @Column(name = "miles")
     private int miles;
+
+    @OneToMany(mappedBy = "legNumber")
+    private List<LegInstance> legInstances;
+
 
 }

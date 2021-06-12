@@ -5,10 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.airms.airlinemanagementsystem.entities.compositeKey.FareId;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,4 +20,5 @@ public class Fare {
     private String fareCode;
     private int amount;
     private String restrictions;
+
 }
