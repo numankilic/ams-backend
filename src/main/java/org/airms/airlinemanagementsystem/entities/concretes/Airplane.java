@@ -23,8 +23,7 @@ public class Airplane {
     @Column(name = "company_id")
     private String company;
 
-    @OneToMany(mappedBy = "airplane")
-    private List<LegInstance> legInstanceList;
+
 
 
 

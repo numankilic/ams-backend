@@ -12,17 +12,16 @@ import java.util.List;
 
 @Entity
 @Table(name = "leg_instance")
-@IdClass(LegInstanceId.class)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@IdClass(LegInstanceId.class)
 public class LegInstance {
+
     @Id
-    @Column(name = "flight_number")
-    private String flightNumber;
-    @Id
-    @Column(name = "leg_number")
     private String legNumber;
+    @Id
+    private String flightNumber;
     @Id
     @Column(name = "date")
     private LocalDate date;
@@ -40,6 +39,8 @@ public class LegInstance {
     private LocalTime depTime;
     @Column(name = "arrival_time")
     private LocalTime arrTime;
+
+
 
 
 

@@ -1,5 +1,6 @@
 package org.airms.airlinemanagementsystem.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,11 +15,15 @@ import javax.persistence.*;
 @Table(name = "fare")
 @IdClass(FareId.class)
 public class Fare {
-    @Id
-    private String flightNumber;
+
+
     @Id
     private String fareCode;
+    @Id
+    private String flightNumber;
     private int amount;
     private String restrictions;
+
+
 
 }

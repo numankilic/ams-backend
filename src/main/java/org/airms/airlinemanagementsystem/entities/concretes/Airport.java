@@ -24,17 +24,7 @@ public class Airport {
     @Column(name = "state")
     private String state;
 
-    @OneToMany(mappedBy = "arrAirportCode")
-    private List<LegInstance> arriveLegInstances;
 
-    @OneToMany(mappedBy = "depAirportCode")
-    private List<LegInstance> departLegInstances;
-
-    @OneToMany(mappedBy = "arrAirportCode")
-    private List<FlightLeg> arriveFlightLegs;
-
-    @OneToMany(mappedBy = "depAirportCode")
-    private List<FlightLeg> departFlightLegs;
 
 
 }

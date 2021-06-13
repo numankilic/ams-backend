@@ -1,5 +1,6 @@
 package org.airms.airlinemanagementsystem.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,5 @@ public class Airline {
     @Column(name = "airlineId")
     private String airlineId;
 
-    @OneToMany(mappedBy = "airline")
-    private List<Flight> flights;
+
 }

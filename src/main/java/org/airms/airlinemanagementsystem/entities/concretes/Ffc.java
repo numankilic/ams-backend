@@ -20,5 +20,5 @@ public class Ffc{
     private String ffcId;
     private int totalMiles;
     private int milePoints;
-    private String caregory;
+    private String category;
 }

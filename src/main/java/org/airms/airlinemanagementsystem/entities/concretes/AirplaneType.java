@@ -22,6 +22,5 @@ public class AirplaneType {
     private String company;
 
 
-    @OneToMany(mappedBy = "airplaneTypeName")
-    private List<Airplane> airplanes;
+
 }

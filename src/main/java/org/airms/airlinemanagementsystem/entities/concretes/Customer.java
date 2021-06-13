@@ -1,5 +1,6 @@
 package org.airms.airlinemanagementsystem.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,6 +30,6 @@ public class Customer {
     @Id
     private String passportNumber;
 
-    @OneToMany(mappedBy = "passportNumber")
-    private List<SeatReservation> seatReservations;
+
+
 }
