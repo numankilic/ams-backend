@@ -1,6 +1,7 @@
 package org.airms.airlinemanagementsystem.api.controller;
 
 import org.airms.airlinemanagementsystem.business.abstracts.SeatReservationService;
+import org.airms.airlinemanagementsystem.core.utilities.results.DataResult;
 import org.airms.airlinemanagementsystem.entities.concretes.SeatReservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ public class SeatReservationController {
         this.seatReservationService = seatReservationService;
     }
     @GetMapping("/getall")
-    List<SeatReservation> getAll(){
+    public DataResult<List<SeatReservation>> getAll(){
         return seatReservationService.getAll();
     }
 }

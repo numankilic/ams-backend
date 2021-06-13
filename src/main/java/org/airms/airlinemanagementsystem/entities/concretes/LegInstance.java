@@ -41,8 +41,7 @@ public class LegInstance {
     @Column(name = "arrival_time")
     private LocalTime arrTime;
 
-    @OneToMany(mappedBy = "date")
-    private List<SeatReservation> seatReservations;
+
 
 
 }

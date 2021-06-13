@@ -1,6 +1,7 @@
 package org.airms.airlinemanagementsystem.api.controller;
 
 import org.airms.airlinemanagementsystem.business.abstracts.AirlineService;
+import org.airms.airlinemanagementsystem.core.utilities.results.DataResult;
 import org.airms.airlinemanagementsystem.entities.concretes.Airline;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,13 +20,13 @@ public class AirlineController {
     }
 
     @GetMapping("/getall")
-    List<Airline> getAll(){
+    DataResult<List<Airline>> getAll(){
         return airlineService.getAll();
     }
 
     @GetMapping("/{id}")
     @ResponseBody
-    Optional<Airline> getById(@PathVariable String id){
+    DataResult<Optional<Airline>> getById(@PathVariable String id){
         return airlineService.getById(id);
     }
 

@@ -1,6 +1,8 @@
 package org.airms.airlinemanagementsystem.business.concretes;
 
 import org.airms.airlinemanagementsystem.business.abstracts.FlightService;
+import org.airms.airlinemanagementsystem.core.utilities.results.DataResult;
+import org.airms.airlinemanagementsystem.core.utilities.results.SuccessDataResult;
 import org.airms.airlinemanagementsystem.dataAccess.FlightDao;
 import org.airms.airlinemanagementsystem.entities.concretes.Flight;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +22,7 @@ public class FlightManager implements FlightService {
     }
 
     @Override
-    public List<Flight> getAll() {
-        return this.flightDao.findAll();
+    public DataResult<List<Flight>> getAll() {
+        return new SuccessDataResult<>(this.flightDao.findAll(), "Flights Listed");
     }
 }

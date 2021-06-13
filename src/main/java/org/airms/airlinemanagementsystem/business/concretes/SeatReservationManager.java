@@ -1,6 +1,8 @@
 package org.airms.airlinemanagementsystem.business.concretes;
 
 import org.airms.airlinemanagementsystem.business.abstracts.SeatReservationService;
+import org.airms.airlinemanagementsystem.core.utilities.results.DataResult;
+import org.airms.airlinemanagementsystem.core.utilities.results.SuccessDataResult;
 import org.airms.airlinemanagementsystem.dataAccess.SeatReservationDao;
 import org.airms.airlinemanagementsystem.entities.concretes.SeatReservation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,7 @@ public class SeatReservationManager implements SeatReservationService {
     }
 
     @Override
-    public List<SeatReservation> getAll() {
-        return seatReservationDao.findAll();
+    public DataResult<List<SeatReservation>> getAll() {
+        return new SuccessDataResult<>(this.seatReservationDao.findAll(), "Seat Reservations Listed");
     }
 }

@@ -1,6 +1,7 @@
 package org.airms.airlinemanagementsystem.api.controller;
 
 import org.airms.airlinemanagementsystem.business.abstracts.FfcService;
+import org.airms.airlinemanagementsystem.core.utilities.results.DataResult;
 import org.airms.airlinemanagementsystem.entities.concretes.Ffc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ public class FfcController {
         this.ffcService = ffcService;
     }
     @GetMapping("/getall")
-    List<Ffc> getAll(){
+    DataResult<List<Ffc>> getAll(){
         return ffcService.getAll();
     }
 }

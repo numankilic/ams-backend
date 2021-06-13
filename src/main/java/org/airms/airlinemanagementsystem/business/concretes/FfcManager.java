@@ -1,6 +1,8 @@
 package org.airms.airlinemanagementsystem.business.concretes;
 
 import org.airms.airlinemanagementsystem.business.abstracts.FfcService;
+import org.airms.airlinemanagementsystem.core.utilities.results.DataResult;
+import org.airms.airlinemanagementsystem.core.utilities.results.SuccessDataResult;
 import org.airms.airlinemanagementsystem.dataAccess.FfcDao;
 import org.airms.airlinemanagementsystem.entities.concretes.Ffc;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,7 @@ public class FfcManager implements FfcService {
     }
 
     @Override
-    public List<Ffc> getAll() {
-        return ffcDao.findAll();
+    public DataResult<List<Ffc>> getAll() {
+        return new SuccessDataResult<>(this.ffcDao.findAll(), "FFC listed");
     }
 }

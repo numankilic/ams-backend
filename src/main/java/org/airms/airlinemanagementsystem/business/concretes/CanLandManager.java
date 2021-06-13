@@ -1,6 +1,8 @@
 package org.airms.airlinemanagementsystem.business.concretes;
 
 import org.airms.airlinemanagementsystem.business.abstracts.CanLandService;
+import org.airms.airlinemanagementsystem.core.utilities.results.DataResult;
+import org.airms.airlinemanagementsystem.core.utilities.results.SuccessDataResult;
 import org.airms.airlinemanagementsystem.dataAccess.CanLandDao;
 import org.airms.airlinemanagementsystem.entities.concretes.CanLand;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,7 @@ public class CanLandManager implements CanLandService {
     }
 
     @Override
-    public List<CanLand> getAll() {
-        return canLandDao.findAll();
+    public DataResult<List<CanLand>> getAll() {
+        return new SuccessDataResult<>(this.canLandDao.findAll(), "CanLand Table Listed");
     }
 }

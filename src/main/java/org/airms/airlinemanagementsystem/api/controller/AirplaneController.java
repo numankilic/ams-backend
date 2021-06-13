@@ -1,6 +1,7 @@
 package org.airms.airlinemanagementsystem.api.controller;
 
 import org.airms.airlinemanagementsystem.business.abstracts.AirplaneService;
+import org.airms.airlinemanagementsystem.core.utilities.results.DataResult;
 import org.airms.airlinemanagementsystem.entities.concretes.Airplane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ public class AirplaneController {
         this.airplaneService = airplaneService;
     }
     @GetMapping("/getall")
-    List<Airplane> getAll(){
+    DataResult<List<Airplane>> getAll(){
         return airplaneService.getAll();
     }
 }

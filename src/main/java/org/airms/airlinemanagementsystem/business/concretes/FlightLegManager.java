@@ -1,6 +1,8 @@
 package org.airms.airlinemanagementsystem.business.concretes;
 
 import org.airms.airlinemanagementsystem.business.abstracts.FlightLegService;
+import org.airms.airlinemanagementsystem.core.utilities.results.DataResult;
+import org.airms.airlinemanagementsystem.core.utilities.results.SuccessDataResult;
 import org.airms.airlinemanagementsystem.dataAccess.FlightLegDao;
 import org.airms.airlinemanagementsystem.entities.concretes.FlightLeg;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +21,7 @@ public class FlightLegManager implements FlightLegService {
     }
 
     @Override
-    public List<FlightLeg> getAll() {
-        return this.flightLegDao.findAll();
+    public DataResult<List<FlightLeg>> getAll() {
+        return new SuccessDataResult<>(this.flightLegDao.findAll(), "Flight Legs Listed");
     }
 }
