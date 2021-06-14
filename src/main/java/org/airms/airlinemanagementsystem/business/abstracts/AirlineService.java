@@ -1,6 +1,7 @@
 package org.airms.airlinemanagementsystem.business.abstracts;
 
 import org.airms.airlinemanagementsystem.core.utilities.results.DataResult;
+import org.airms.airlinemanagementsystem.core.utilities.results.Result;
 import org.airms.airlinemanagementsystem.entities.concretes.Airline;
 import org.airms.airlinemanagementsystem.entities.concretes.Flight;
 
@@ -11,4 +12,7 @@ public interface AirlineService {
 
     DataResult<List<Airline>> getAll();
     DataResult<Optional<Airline>> getById(String id);
+    DataResult<Optional<List<Airline>>> getByCompanyId(String companyId);
+
+    Result add(Airline airline);
 }

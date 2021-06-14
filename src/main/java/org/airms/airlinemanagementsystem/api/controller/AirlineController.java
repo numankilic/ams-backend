@@ -2,6 +2,7 @@ package org.airms.airlinemanagementsystem.api.controller;
 
 import org.airms.airlinemanagementsystem.business.abstracts.AirlineService;
 import org.airms.airlinemanagementsystem.core.utilities.results.DataResult;
+import org.airms.airlinemanagementsystem.core.utilities.results.Result;
 import org.airms.airlinemanagementsystem.entities.concretes.Airline;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,19 +21,25 @@ public class AirlineController {
     }
 
     @GetMapping("/getall")
-    DataResult<List<Airline>> getAll(){
+    DataResult<List<Airline>> getAll() {
         return airlineService.getAll();
     }
 
-    @GetMapping("/{id}")
-    @ResponseBody
-    DataResult<Optional<Airline>> getById(@PathVariable String id){
+    @GetMapping("/getByAirlineId")
+    DataResult<Optional<Airline>> getById(@RequestParam String id) {
         return airlineService.getById(id);
     }
 
-//    @GetMapping("/getflights/{id}")
-//    @ResponseBody
-//    List<Flight> getFlights(@PathVariable String id){
-//        return airlineService.getById(id).getFlights();
-//    }
+    @GetMapping("/getByCompanyId")
+    DataResult<Optional<List<Airline>>> getByCompanyId(@RequestParam String companyId) {
+        return this.airlineService.getByCompanyId(companyId);
+    }
+
+    @PostMapping("/add")
+    public Result add(@RequestBody Airline airline){
+        return this.airlineService.add(airline);
+    }
+
 }
+
+

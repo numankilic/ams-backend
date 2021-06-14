@@ -19,7 +19,7 @@ public class FlightLegController {
     public FlightLegController(FlightLegService flightLegService) {
         this.flightLegService = flightLegService;
     }
-    @GetMapping("/gelall")
+    @GetMapping("/getall")
     public DataResult<List<FlightLeg>> getAll(){
         return this.flightLegService.getAll();
     }

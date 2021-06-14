@@ -2,7 +2,9 @@ package org.airms.airlinemanagementsystem.business.concretes;
 
 import org.airms.airlinemanagementsystem.business.abstracts.AirlineService;
 import org.airms.airlinemanagementsystem.core.utilities.results.DataResult;
+import org.airms.airlinemanagementsystem.core.utilities.results.Result;
 import org.airms.airlinemanagementsystem.core.utilities.results.SuccessDataResult;
+import org.airms.airlinemanagementsystem.core.utilities.results.SuccessResult;
 import org.airms.airlinemanagementsystem.dataAccess.AirlineDao;
 import org.airms.airlinemanagementsystem.entities.concretes.Airline;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +33,16 @@ public class AirlineManager implements AirlineService {
     @Override
     public DataResult<Optional<Airline>> getById(String id) {
         return new SuccessDataResult<>(this.airlineDao.findById(id), "Airline {id} returned");
+    }
+
+    @Override
+    public DataResult<Optional<List<Airline>>> getByCompanyId(String companyId) {
+        return new SuccessDataResult<>(this.airlineDao.getByCompanyId(companyId), "Airline(s) returned");
+    }
+
+    @Override
+    public Result add(Airline airline) {
+        this.airlineDao.save(airline);
+        return new SuccessResult("Airline Saved");
     }
 }
