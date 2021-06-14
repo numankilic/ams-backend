@@ -19,7 +19,7 @@ public class Customer {
     private String customerName;
     @Column(name = "customer_phone")
     private String customerPhone;
-    @Column(name = "adress")
+    @Column(name = "address")
     private String address;
     @Column(name = "country")
     private String country;

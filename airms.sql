@@ -15,7 +15,7 @@ create table customer
 (
 	customer_name varchar(50) not null,
 	customer_phone varchar(14) not null,
-	adress text not null,
+	address text not null,
 	country varchar(30) not null,
 	e_mail varchar(30) not null,
 	passport_number varchar(12) not null
@@ -37,12 +37,7 @@ create table ffc
 	mile_points integer
 		constraint mile_points_check
 			check (mile_points >= 0),
-	category varchar(10),
-	adress varchar(255),
-	country varchar(255),
-	customer_name varchar(255),
-	customer_phone varchar(255),
-	e_mail varchar(255)
+	category varchar(10)
 );
 
 alter table ffc owner to postgres;
@@ -268,7 +263,7 @@ alter table ucus_bilgileri owner to postgres;
 create view "non ffc customer"(customer_name, customer_phone, adress, country, e_mail, passport_number) as
 	SELECT customer.customer_name,
        customer.customer_phone,
-       customer.adress,
+       customer.address,
        customer.country,
        customer.e_mail,
        customer.passport_number
