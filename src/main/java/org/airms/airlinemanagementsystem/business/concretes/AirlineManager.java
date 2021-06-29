@@ -45,4 +45,10 @@ public class AirlineManager implements AirlineService {
         this.airlineDao.save(airline);
         return new SuccessResult("Airline Saved");
     }
+
+    @Override
+    public Result deleteByAirlineId(String airlineId) {
+        this.airlineDao.delete(this.airlineDao.getById(airlineId));
+        return new SuccessResult("Airline Deleted");
+    }
 }

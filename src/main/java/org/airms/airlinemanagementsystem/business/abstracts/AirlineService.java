@@ -13,6 +13,6 @@ public interface AirlineService {
     DataResult<List<Airline>> getAll();
     DataResult<Optional<Airline>> getById(String id);
     DataResult<Optional<List<Airline>>> getByCompanyId(String companyId);
-
     Result add(Airline airline);
+    Result deleteByAirlineId(String airlineId);
 }

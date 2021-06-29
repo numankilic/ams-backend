@@ -40,6 +40,11 @@ public class AirlineController {
         return this.airlineService.add(airline);
     }
 
+    @DeleteMapping("/deleteByAirlineId")
+    public void delete(@RequestParam String id){
+        this.airlineService.deleteByAirlineId(id);
+    }
+
 }
 
 
