@@ -25,24 +25,29 @@ public class AirlineController {
         return airlineService.getAll();
     }
 
-    @GetMapping("/getByAirlineId")
-    DataResult<Optional<Airline>> getById(@RequestParam String id) {
+    @GetMapping("/getByAirlineId/{id}")
+    DataResult<Optional<Airline>> getById(@PathVariable(value = "id") String id) {
         return airlineService.getById(id);
     }
 
-    @GetMapping("/getByCompanyId")
-    DataResult<Optional<List<Airline>>> getByCompanyId(@RequestParam String companyId) {
+    @GetMapping("/getByCompanyId/{id}")
+    DataResult<Optional<List<Airline>>> getByCompanyId(@PathVariable(value = "id") String companyId) {
         return this.airlineService.getByCompanyId(companyId);
     }
 
     @PostMapping("/add")
-    public Result add(@RequestBody Airline airline){
+    Result add(@RequestBody Airline airline) {
         return this.airlineService.add(airline);
     }
 
     @DeleteMapping("/deleteByAirlineId")
-    public void delete(@RequestParam String id){
-        this.airlineService.deleteByAirlineId(id);
+    Result delete(@RequestParam String id) {
+        return this.airlineService.deleteByAirlineId(id);
+    }
+
+    @PutMapping("/update/{id}")
+    DataResult<Airline> update(@PathVariable(value = "id") String id, @RequestBody Airline airline) {
+        return this.airlineService.update(id, airline);
     }
 
 }

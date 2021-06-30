@@ -21,7 +21,7 @@ public class Airplane {
     @Column(name = "airplane_type")
     private String airplaneTypeName;
     @Column(name = "company_id")
-    private String company;
+    private String companyId;
 
 
 

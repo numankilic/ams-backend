@@ -1,6 +1,7 @@
 package org.airms.airlinemanagementsystem.entities.concretes;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "airline")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Airline {
     @Column(name = "company_id")
     private String companyId;

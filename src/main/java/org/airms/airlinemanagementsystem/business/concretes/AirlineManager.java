@@ -51,4 +51,12 @@ public class AirlineManager implements AirlineService {
         this.airlineDao.delete(this.airlineDao.getById(airlineId));
         return new SuccessResult("Airline Deleted");
     }
+
+    @Override
+    public DataResult<Airline> update(String id, Airline airline) {
+        Airline a = this.airlineDao.getById(id);
+        a.setAirlineName(airline.getAirlineName());
+        a.setCompanyId(airline.getCompanyId());
+        return new SuccessDataResult<>(this.airlineDao.save(a), "Airline Updated");
+    }
 }

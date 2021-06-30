@@ -15,4 +15,5 @@ public interface AirlineService {
     DataResult<Optional<List<Airline>>> getByCompanyId(String companyId);
     Result add(Airline airline);
     Result deleteByAirlineId(String airlineId);
+    DataResult<Airline> update(String id, Airline airline);
 }
