@@ -14,4 +14,5 @@ public interface AirplaneService {
     DataResult<Optional<List<Airplane>>> getByAirplaneType(String airplaneTypeName);
     Result add(Airplane airplane);
     Result deleteByAirplaneId(String airplaneId);
+    DataResult<Airplane> update(String id, Airplane airplane);
 }

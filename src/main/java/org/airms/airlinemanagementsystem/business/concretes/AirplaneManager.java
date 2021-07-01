@@ -50,7 +50,16 @@ public class AirplaneManager implements AirplaneService {
 
     @Override
     public Result deleteByAirplaneId(String airplaneId) {
-        this.airplaneDao.delete(this.airplaneDao.getById(airplaneId));
+        this.airplaneDao.deleteById(airplaneId);
         return new SuccessResult("Airplane Deleted");
+    }
+
+    @Override
+    public DataResult<Airplane> update(String id, Airplane airplane) {
+        Airplane a = this.airplaneDao.getById(id);
+        a.setCompanyId(airplane.getCompanyId());
+        a.setAirplaneTypeName(airplane.getAirplaneTypeName());
+        a.setNumTotalSeats(airplane.getNumTotalSeats());
+        return new SuccessDataResult<>(this.airplaneDao.save(a), "Airplane Updated");
     }
 }
