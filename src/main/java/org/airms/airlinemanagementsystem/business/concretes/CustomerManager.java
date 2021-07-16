@@ -37,4 +37,9 @@ public class CustomerManager implements CustomerService {
     public DataResult<List<Customer>> getByCustomerName(String customerName) {
         return  new SuccessDataResult<>(this.customerDao.getByCustomerName(customerName), "Customer Listed By Name");
     }
+
+    @Override
+    public DataResult<Customer> getById(String passportNumber) {
+        return new SuccessDataResult<>(this.customerDao.getById(passportNumber));
+    }
 }

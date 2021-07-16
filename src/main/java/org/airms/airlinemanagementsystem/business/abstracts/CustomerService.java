@@ -11,5 +11,6 @@ public interface CustomerService {
     DataResult<List<Customer>> getAll();
     Result add(Customer customer);
     DataResult<List<Customer>> getByCustomerName(String customerName);
+    DataResult<Customer> getById(String passportNumber);
 
 }

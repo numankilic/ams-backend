@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/api/customers")
 public class CustomerController {
@@ -32,5 +32,9 @@ public class CustomerController {
     @GetMapping("/getByCustomerName")
     public DataResult<List<Customer>> getByCustomerName(@RequestParam String customerName){
         return this.customerService.getByCustomerName(customerName);
+    }
+    @GetMapping("/getById")
+    public DataResult<Customer> getById(@RequestParam String passportNumber){
+        return this.customerService.getById(passportNumber);
     }
 }
