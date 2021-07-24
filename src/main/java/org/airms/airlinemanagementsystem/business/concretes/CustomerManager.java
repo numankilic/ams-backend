@@ -42,4 +42,21 @@ public class CustomerManager implements CustomerService {
     public DataResult<Customer> getById(String passportNumber) {
         return new SuccessDataResult<>(this.customerDao.getById(passportNumber));
     }
+
+    @Override
+    public Result deleteById(String passportNumber) {
+        this.customerDao.delete(this.customerDao.getById(passportNumber));
+        return new SuccessResult("Customer Deleted");
+    }
+
+    @Override
+    public DataResult<Customer> update(String passportNumber, Customer c) {
+        Customer customer = this.customerDao.getById(passportNumber);
+        customer.setCustomerName(c.getCustomerName());
+        customer.setCustomerPhone(c.getCustomerPhone());
+        customer.setAddress(c.getAddress());
+        customer.setCountry(c.getCountry());
+        customer.setEMail(c.getEMail());
+        return new SuccessDataResult<>(this.customerDao.save(customer), "Customer updated");
+    }
 }

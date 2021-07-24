@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/api/customers")
@@ -20,21 +21,32 @@ public class CustomerController {
     }
 
     @GetMapping("/getall")
-    public DataResult<List<Customer>> getAll(){
+    public DataResult<List<Customer>> getAll() {
         return this.customerService.getAll();
     }
 
     @PostMapping("/add")
-    public Result add(@RequestBody Customer customer){
+    public Result add(@RequestBody Customer customer) {
         return this.customerService.add(customer);
     }
 
     @GetMapping("/getByCustomerName")
-    public DataResult<List<Customer>> getByCustomerName(@RequestParam String customerName){
+    public DataResult<List<Customer>> getByCustomerName(@RequestParam String customerName) {
         return this.customerService.getByCustomerName(customerName);
     }
+
     @GetMapping("/getById")
-    public DataResult<Customer> getById(@RequestParam String passportNumber){
+    public DataResult<Customer> getById(@RequestParam String passportNumber) {
         return this.customerService.getById(passportNumber);
+    }
+
+    @DeleteMapping("/deleteById")
+    public Result deleteById(@RequestParam String passportNumber) {
+        return this.customerService.deleteById(passportNumber);
+    }
+
+    @PutMapping("/update/{id}")
+    public DataResult<Customer> update(@PathVariable(value = "id") String id,@RequestBody Customer c){
+        return this.customerService.update(id, c);
     }
 }

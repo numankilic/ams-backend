@@ -12,5 +12,7 @@ public interface CustomerService {
     Result add(Customer customer);
     DataResult<List<Customer>> getByCustomerName(String customerName);
     DataResult<Customer> getById(String passportNumber);
+    Result deleteById(String passportNumber);
+    DataResult<Customer> update(String passportNumber, Customer c);
 
 }
